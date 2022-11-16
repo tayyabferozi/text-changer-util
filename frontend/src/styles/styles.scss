@@ -1,0 +1,45 @@
+* {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+textarea {
+  outline: none;
+  border: none;
+}
+
+.uploader {
+  text-align: center;
+  padding: 2rem;
+}
+
+.btn {
+  background-color: tomato;
+  color: #fff;
+  font-weight: bold;
+  border-radius: 10px;
+  padding: 1rem 1.75rem;
+  border: none;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.editor {
+  display: flex;
+  height: 100vh;
+
+  & > * {
+    height: 100%;
+    width: 50%;
+  }
+
+  .left {
+    border-right: 1px solid #ccc;
+    font-family: monospace;
+    font-size: 0.875rem;
+  }
+
+  .right {
+    padding: 1rem;
+    font-size: 1rem;
+  }
+}
