@@ -3,6 +3,7 @@ import React, { useRef, useState } from "react";
 // import { toast } from "react-toastify";
 
 const Uploader = ({ codeState, setCodeState, setFormState }) => {
+  const fileUploadRef = useRef();
   const downloadRef = useRef();
   const [fileName, setFileName] = useState("");
 
@@ -36,6 +37,10 @@ const Uploader = ({ codeState, setCodeState, setFormState }) => {
     element.click();
 
     document.body.removeChild(element);
+
+    setCodeState("");
+    setFormState("");
+    fileUploadRef.current.value = "";
   }
 
   // const formSubmitHandler = (e) => {
@@ -60,7 +65,12 @@ const Uploader = ({ codeState, setCodeState, setFormState }) => {
   return (
     <div className="uploader">
       <form action="">
-        <input type="file" accept=".js" onChange={inputChangeHandler} />
+        <input
+          ref={fileUploadRef}
+          type="file"
+          accept=".js"
+          onChange={inputChangeHandler}
+        />
         {codeState && (
           <button
             ref={downloadRef}
